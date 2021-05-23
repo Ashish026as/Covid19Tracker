@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="India's Covid-19 \nTracker"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/lastUpdated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/white"
+        android:layout_margin="15dp"
+        android:layout_alignParentRight="true" />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:layout_below="@id/titleTv"
+        android:orientation="horizontal" >
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="confirmed"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white"
+                android:src="@drawable/image1"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/confirmedTv"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textAlignment="viewEnd"
+                android:gravity="end"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                 />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/image2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activeTv"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textAlignment="viewEnd"
+                android:gravity="end"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recovered"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/gff"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/recoveredTv"
+                android:textColor="@color/white"
+                android:layout_marginTop="8dp"
+                android:textAlignment="viewEnd"
+                android:gravity="end"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="deceased"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/image4"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/deceasedTv"
+                android:layout_marginTop="8dp"
+                android:textAlignment="viewEnd"
+                android:gravity="end"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_list"
+        android:layout_below="@id/container"/>
+</RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
